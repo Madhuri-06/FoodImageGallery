@@ -1,0 +1,492 @@
+body {
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+        max-width: 100vw;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    
+}
+.title{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.title h1{
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.searchbar{
+    margin-right: 40px;
+    margin-top: 40px;
+    display: flex;
+    
+    
+    
+}
+.searchform{
+    width:100%;
+    max-width: 500px;
+    background: rgba(212, 205, 205, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 20px;
+}
+.searchform input{
+    background: transparent;
+    flex:1;
+    border: 0;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: white;
+    
+}
+.searchform button img{
+ width:25px;
+
+}
+.searchform button{
+    border:0;
+    border-radius: 60px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background:rgb(18, 18, 18);
+}
+.images{
+    width:200px;
+    height: 200px;
+}
+.galleryimages{
+    width:90%;
+    margin:0 auto;
+    /* padding:50px 20px; */
+    margin-top: 40px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: 250px;
+    grid-gap:20px;
+}
+.images{
+    position: relative;
+    background-color: #efefef;
+    overflow: hidden;
+    z-index: 1;
+}
+.images{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.images:hover{
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.containers:nth-child(3n-2){
+ 
+grid-column: span 2;
+grid-row: span 2;
+}
+.titles{
+        position: absolute;
+        color: whitesmoke;
+        
+        transition: opacity 0.5s ease-out;
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        text-align: center;
+        top:10px;
+        z-index: 10;
+        font-size: x-large;
+        opacity: 0;
+        font-weight: 900;
+        margin: 0;
+        
+}
+.containers:hover .titles{
+    opacity: 1;
+}
+.categorie{
+        position: absolute;
+        color: whitesmoke;
+        bottom: 10px;
+        transition: opacity 0.5s ease-out;
+        background: rgba(0, 0, 0, 0.4);
+        
+        width:100%;
+        text-align: center;
+        z-index: 10;
+        font-size: x-large;
+        opacity: 0;
+        font-weight: 900;
+        margin:0;
+}
+.containers:hover .categorie{
+    opacity: 1;
+}
+.containers{
+    position: relative;
+}
+.openlightbox {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.lightboximagecontainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imagecontainer {
+    position: relative;
+    margin-top: 50px;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.closebutton {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: #fff;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: black;
+    border-radius: 5px;
+    transition: background 0.5s;
+    z-index: 1000;
+}
+
+.X {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 1.5px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 1.5px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.closebutton:hover {
+    background-color: rgb(211, 21, 21);
+}
+
+.closebutton:active {
+    background-color: rgb(130, 0, 0);
+}
+
+.lightboximage {
+    width: auto;
+    max-width: calc(100vw - 100px);
+    height: auto;
+    max-height: 65vh;
+    object-fit: contain;
+    border: 3px solid #fff;
+}
+
+.nextbutton {
+    position: absolute;
+    top: 45%;
+    right: 50px;
+    color: #fff;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: black;
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
+.righttop {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.rightbottom {
+    content: "";
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.nextbutton:hover {
+    background-color: rgb(8, 247, 55);
+}
+
+.nextbutton:active {
+    background-color: rgb(0, 130, 0);
+    scale: 0.9;
+}
+
+.prevbutton {
+    position: absolute;
+    top: 45%;
+    left: 50px;
+    color: #fff;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: black;
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
+.lefttop {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.leftbottom {
+    content: "";
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.prevbutton:hover {
+    background-color: rgb(8, 247, 55);
+}
+
+.prevbutton:active {
+    background-color: rgb(0, 130, 0);
+    scale: 0.9;
+}
+
+@media screen and (max-width: 900px) {
+    .closebutton {
+        top: 10px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .nextbutton {
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .righttop {
+        width: 17px;
+    }
+
+    .rightbottom {
+        width: 17px;
+    }
+
+    .prevbutton {
+        left: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .lefttop {
+        width: 17px;
+    }
+
+    .leftbottom {
+        width: 17px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .lightboximage {
+        width: auto;
+        max-width: calc(100vw - 50px);
+    }
+
+    .closebutton {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .lightboximage {
+        width: auto;
+        max-width: calc(100vw - 20px);
+    }
+
+    .closebutton {
+        right: 10px;
+    }
+
+    .X {
+        width: 20px;
+    }
+
+    .Y {
+        width: 20px;
+    }
+
+    .nextbutton {
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .righttop {
+        width: 12px;
+    }
+
+    .rightbottom {
+        width: 12px;
+    }
+
+    .prevbutton {
+        left: 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .lefttop {
+        width: 12px;
+    }
+
+    .leftbottom {
+        width: 12px;
+    }
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background: #000000;
+}
+
+.imageinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nextimages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 20px;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+
+.slider-img {
+    width: 150px;
+    height: 100px;
+    object-fit: fill;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+}
+
+.slider-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 20px #1b9bee;
+}
+
+.slider-img:active {
+    transform: scale(1);
+}
+
+.current {
+    border: 3px solid #1b9bee;
+}
+
+@media screen and (max-width: 550px) {
+    .slider-img {
+        width: 130px;
+        height: 90px;
+    }
+
+    .nextimages {
+        margin-bottom: 5px;
+        gap: 10px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .slider-img {
+        width: 100px;
+        height: 70px;
+    }
+
+    .nextimages {
+        gap: 5px;
+    }
+}
+@media (max-width:760px){
+    .galleryimages {
+            
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: 250px;
+            
+        }
+        .images:nth-child(3n-2){
+            grid-column: unset;
+            grid-row:unset;
+        }
+}

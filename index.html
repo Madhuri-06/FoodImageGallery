@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./lightbox2-dev/dist/css/lightbox.min.css" />
+    <script src="index.js" type="module" defer></script>
+    <script src="data.js" type="module" defer></script>
+    
+</head>
+  <body>
+    <div class="main">
+      <div class="title">
+        <h1>Image Gallery</h1>
+        <div class="searchbar">
+          <form action="" class="searchform">
+            <input type="text" placeholder="search an Image" id="search" />
+            <button type="submit"><img src="Images/search.png" /></button>
+          </form>
+        </div>
+      </div>
+      <div
+        class="galleryimages"
+        id="galleryimages"
+        
+      ></div>
+      <div class="lightbox hidden" id="lightbox">
+      <div class="lightboximagecontainer">
+        <button class="closebutton" id="closebutton">
+          <span class="X"></span>
+          <span class="Y"></span>
+        </button>
+      <div class="imagecontainer">
+          <img
+            src=""
+            alt=""
+            class="lightboximage"
+            id="lightboximage"
+            draggable="false"
+          />
+          <div class="imageinfo" id="imageinfo">
+            <p class="imageindex" id="imageindex"></p>
+            <p class="imagetitle" id="imagetitle"></p>
+            <p class="imagecategory" id="imagecategory"></p>
+          </div>
+        </div>
+        <button class="prevbutton" id="prevbutton">
+          <span class="lefttop"></span>
+          <span class="leftbottom"></span>
+        </button>
+        <button class="nextbutton" id="nextbutton">
+          <span class="righttop"></span>
+          <span class="rightbottom"></span>
+        </button>
+
+        <div class="nextimages" id="nextimages"></div>
+      </div>
+    </div>
+    </div>
+    
+  </body>
+</html>
